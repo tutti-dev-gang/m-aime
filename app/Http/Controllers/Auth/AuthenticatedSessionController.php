@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -19,9 +20,14 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): Response
     {
+        $socialiteUrls = [
+            'github' => config("services.github.url"),
+            'discord' => config("services.discord.url"),
+        ];
         return Inertia::render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
             'status' => session('status'),
+            'socialiteUrls' => $socialiteUrls,
         ]);
     }
 

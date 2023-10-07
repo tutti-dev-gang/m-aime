@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->unsignedBigInteger('admin_type_id')->default(1);
             $table->foreign('admin_type_id')->references('id')->on('admin_types');
+            
+            $table->unsignedBigInteger("discord_id")->nullable();
+            $table->unsignedBigInteger("github_id")->nullable();
             $table->timestamps();
         });
     }

@@ -25,6 +25,17 @@ class AdminSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+        Admin::create([
+            'id' => 2,
+            'name' => 'Alexis',
+            'email' => 'alexyanguas71@gmail.com',
+            'password' => bcrypt('rootroot'),
+            'admin_type_id' => 1,
+            'discord_id' => '875756727709106186',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
         Admin::factory(2)->create();
     }
 }

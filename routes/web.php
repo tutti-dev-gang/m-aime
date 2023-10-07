@@ -3,7 +3,9 @@
 use App\Http\Controllers\{
     UserController,
     ProfileController,
-    PostController
+};
+use App\Http\Controllers\Auth\{
+    DiscordController,
 };
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -46,5 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::get('users/{user}', [UserController::class, 'show'])->name('users.show');
 });
+
+Route::get('/oauth/callback/discord', [DiscordController::class, 'handleProviderCallback']);
 
 require __DIR__.'/auth.php';
