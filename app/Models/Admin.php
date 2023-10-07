@@ -41,4 +41,9 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function type(){
+        return $this->belongsTo(AdminType::class, 'admin_type_id');
+    }
 }

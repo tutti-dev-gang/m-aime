@@ -19,6 +19,8 @@ class AdminTypeSeeder extends Seeder
         AdminType::create([
             'id' => 1,
             'name' => 'Admin',
+            'icon' => 'fa-regular fa-star-half',
+            'color' => '#000000',
             'description' => 'Admin',
             'created_at' => now(),
             'updated_at' => now(),
@@ -27,6 +29,8 @@ class AdminTypeSeeder extends Seeder
         AdminType::create([
             'id' => 2,
             'name' => 'Super Admin',
+            'icon' => 'fa-regular fa-star',
+            'color' => '#ff0000',
             'description' => 'Super Admin',
             'created_at' => now(),
             'updated_at' => now(),
