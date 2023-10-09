@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             GenderSeeder::class,
             UserSeeder::class,
+            PhotosSeeder::class,
         ]);
     }
 }
