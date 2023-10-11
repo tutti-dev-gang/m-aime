@@ -30,7 +30,7 @@ class UserFactory extends Factory
             'location' => fake()->city(),
             'birthday' => fake()->date(),
             'last_login' => fake()->date(),
-            'interests_and_preferences' => '["music", "sports", "movies"]',
+            'interests' => '[{ "id": 1, "name": "Sports" },{ "id": 2, "name": "Musique"},{ "id": 3, "name": "Jeux vidéo" }]',
             'gender_id' => fake()->randomElement($genderIds),
         ];
     }

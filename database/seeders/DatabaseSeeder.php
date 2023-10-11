@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             AdminTypeSeeder::class,
             AdminSeeder::class,
             GenderSeeder::class,
+            InterestSeeder::class,
             UserSeeder::class,
             PhotosSeeder::class,
         ]);

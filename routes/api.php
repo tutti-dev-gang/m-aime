@@ -22,4 +22,5 @@ use App\Http\Controllers\Api\{
 
 Route::prefix('v1')->group(function () {
     Route::get('/users', [UsersController::class, 'getAllUsers']);
+    Route::get('/users/{id}', [UsersController::class, 'getUserById']);
 });

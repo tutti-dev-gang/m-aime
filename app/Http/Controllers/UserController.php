@@ -22,7 +22,7 @@ class UserController extends Controller
                 'location' => $user->location,
                 'age' => Utils::getAge($user->birthday),
                 'last_login' => Utils::getDateDiffForHumans($user->last_login),
-                'interests_and_preferences' => $user->interests_and_preferences,
+                'interests' => $user->interests,
                 'created_at' =>  Utils::getDateDiffForHumans($user->created_at),
                 'updated_at' => $user->updated_at,
                 'gender' => $user->gender->name
@@ -39,6 +39,23 @@ class UserController extends Controller
     }
 
     public function show(User $user){
+        // dd($user->interests, json_decode($user->interests));
+        $interests = json_decode($user->interests);
+
+
+        $user = [
+            'id' => $user->id,
+            'name' => $user->name,
+            'email' => $user->email,
+            'profile_description' => $user->profile_description,
+            'location' => $user->location,
+            'age' => Utils::getAge($user->birthday),
+            'last_login' => Utils::getDateDiffForHumans($user->last_login),
+            'interests' => $interests,
+            'created_at' =>  Utils::getDateDiffForHumans($user->created_at),
+            'gender' => $user->gender->name
+        ];
+
         return Inertia::render('Users/Show', [
             'auth' => [
                 'user' => Auth::user(),

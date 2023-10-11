@@ -24,8 +24,21 @@ class UserSeeder extends Seeder
             'location' => 'Madrid',
             'birthday' => '1996-07-01',
             'last_login' => '2021-07-01',
-            'interests_and_preferences' => '["music", "sports", "movies"]',
             'gender_id' => 1,
+            'interests' => '[
+                {
+                    "id": 1,
+                    "name": "Sports"
+                },
+                {
+                    "id": 2,
+                    "name": "Musique"
+                },
+                {
+                    "id": 3,
+                    "name": "Jeux vidéo"
+                }
+            ]',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

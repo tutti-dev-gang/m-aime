@@ -13,8 +13,8 @@ export default function Header({ auth }) {
                 <BtnLink href={route('users')} active={route().current('users')}>
                     Utilisateurs
                 </BtnLink>
-                <BtnLink href={route('dashboard')} active={route().current('settings')}>
-                    Paramètres
+                <BtnLink href={route('parameters')} active={route().current('parameters')}>
+                    Paramètres 
                 </BtnLink>
             </div>
         </div>

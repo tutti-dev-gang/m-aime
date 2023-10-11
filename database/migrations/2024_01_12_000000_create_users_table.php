@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string("location")->nullable();
             $table->date("birthday")->nullable();
             $table->date("last_login")->nullable();
-            $table->json("interests_and_preferences")->nullable();
+            $table->json("interests")->nullable();
             $table->unsignedBigInteger("gender_id");
             $table->foreign('gender_id')->references('id')->on('genders');
             $table->rememberToken();
